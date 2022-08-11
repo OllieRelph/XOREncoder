@@ -1,0 +1,8 @@
+First README
+
+Plans for repository
+
+1. Create ability to read in a plaintext and convert into ciphertext by using a key
+2. Create ability to read in ciphertext and convert back to plaintext by using a key
+3. Create a function that can take a list of possible keys and brute force find the one used for a random cipher
+
