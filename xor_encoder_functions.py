@@ -95,8 +95,8 @@ def convert_using_cipher(text: str, key: str):
 def generate_encoder():
     """Main encoder function that asks user for plaintext and key inputs, and outputs a cipher/pliantext after using XOR encoding
     """
-    plain = 'hello my name is Ollie'
-    key = 'some key to test the functions'
+    plain = input('Please enter a plain / cipher text to encode or decode: ')
+    key = input('Please enter the key that you wish to use for the encryption or decryption: ')
 
     #key gets repeated until it is the same length as the plaintext (or reduced in length if smaller)
     key = repeat_to_at_least_length(key, len(plain))
