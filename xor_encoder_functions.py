@@ -91,4 +91,20 @@ def convert_using_cipher(text: str, key: str):
     converted_binary = xor_lists(text_binary, key_binary)
     converted_from_binary = convert_binary_to_string(converted_binary)
     return converted_from_binary
+
+def generate_encoder():
+    """Main encoder function that asks user for plaintext and key inputs, and outputs a cipher/pliantext after using XOR encoding
+    """
+    plain = 'hello my name is Ollie'
+    key = 'some key to test the functions'
+
+    #key gets repeated until it is the same length as the plaintext (or reduced in length if smaller)
+    key = repeat_to_at_least_length(key, len(plain))
+
+    ciphertext = convert_using_cipher(plain, key)
+    print(f'The ciphertext calculated using the plaintext and key is: \n{ciphertext}')
+
+    plaintext_solved = convert_using_cipher(ciphertext, key)
+    print(f'The plaintext calculated using the key on the ciphertext is: \n{plaintext_solved}')
+
     
