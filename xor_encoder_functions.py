@@ -77,6 +77,15 @@ def xor_lists(plain_or_cipher: list, key_binary: list):
     return ciphertext_binary
 
 def convert_using_cipher(text: str, key: str):
+    """Pipeline function that takes a text input (plain or cipher) and applies the key under a binary XOR function, returning the ASCII encoded string output
+
+    Args:
+        text (str): plain or cipher text that is en/decoded using XOR
+        key (str): key used for the ciphering
+
+    Returns:
+        converted_from_binary (str): string of plain or ciphertext that has been converted from the 'text' arugment passed
+    """
     text_binary = convert_string_to_binary(text)
     key_binary = convert_string_to_binary(key)
     converted_binary = xor_lists(text_binary, key_binary)
