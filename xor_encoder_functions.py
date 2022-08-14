@@ -111,7 +111,12 @@ def generate_encoder():
     print(f'The text calculated using the input and key is: \n{input_encrypted}')
 
     # en/decrypts the en/decrypted text using the key, output should be the same as the initial input message
-    input_solved = convert_using_cipher(input_encrypted, key)
-    print(f'The input calculated using the key on the en/decrypted text is: \n{input_solved}')
+    # input_solved = convert_using_cipher(input_encrypted, key)
+    # print(f'The input calculated using the key on the en/decrypted text is: \n{input_solved}')
+
+    #Wipe current file and create new empty file to store encrypted message
+    file = open('encryption.txt', 'w')
+    file.write(input_encrypted)
+    file.close()
 
     
