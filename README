@@ -6,3 +6,4 @@ Plans for repository
 2. Create ability to read in ciphertext and convert back to plaintext by using a key
 3. Comment all functions
 4. Add user input ability
+5. Add error catching and error codes

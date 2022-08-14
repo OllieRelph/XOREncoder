@@ -95,16 +95,23 @@ def convert_using_cipher(text: str, key: str):
 def generate_encoder():
     """Main encoder function that asks user for plaintext and key inputs, and outputs a cipher/pliantext after using XOR encoding
     """
+    #input plain/cipher and assert that it is not empty
     plain = input('Please enter a plain / cipher text to encode or decode: ')
+    assert len(plain) > 0, "text to encode or decode is empty"
+
+    #input key for encoding or decoding and assert that it is not empty
     key = input('Please enter the key that you wish to use for the encryption or decryption: ')
+    assert len(key) > 0, "key is empty"
 
     #key gets repeated until it is the same length as the plaintext (or reduced in length if smaller)
     key = repeat_to_at_least_length(key, len(plain))
 
-    ciphertext = convert_using_cipher(plain, key)
-    print(f'The ciphertext calculated using the plaintext and key is: \n{ciphertext}')
+    # en/decrypts the input message using the key
+    input_encrypted = convert_using_cipher(plain, key)
+    print(f'The text calculated using the input and key is: \n{input_encrypted}')
 
-    plaintext_solved = convert_using_cipher(ciphertext, key)
-    print(f'The plaintext calculated using the key on the ciphertext is: \n{plaintext_solved}')
+    # en/decrypts the en/decrypted text using the key, output should be the same as the initial input message
+    input_solved = convert_using_cipher(input_encrypted, key)
+    print(f'The input calculated using the key on the en/decrypted text is: \n{input_solved}')
 
     
